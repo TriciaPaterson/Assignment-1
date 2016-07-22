@@ -32,11 +32,20 @@ public class Event implements EventList {
 	
 		System.out.println(eventName + "\t" + eventHeadline);		
 	}
-	public static void main(String[] args)
-	{
+	
+	@Override
+	public void displayHeader() {
+		
 		System.out.println("Event\t\tEvent Headline\n" + 
 				"-----------------------------------------------------------------------------\n");
+		
+	}
+	
+	public static void main(String[] args)
+	{
+		
 		Event e = new Event();
+		e.displayHeader();
 		e.setEventName("Burgulary");  //Name of event
 		e.setHeadline("Alarm going male seen running from the scene"); // initial information from caller
 		e.display(eventName, eventHeadline);
@@ -50,5 +59,7 @@ public class Event implements EventList {
 		e.setHeadline("Male caucasian green hoodie dark coloured pants");// Updated information
 		e.display(eventName, eventHeadline);	
 	}
+
+
 
 }
